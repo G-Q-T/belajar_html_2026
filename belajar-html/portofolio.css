@@ -1,118 +1,433 @@
- body{
-    margin:0;
-    background-color: rgb(231, 205, 205);
+/* Reset Css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Padding dan border dimasukkan dalam hitungan lebar elemen */
+}
+
+html {
+    scroll-behavior: smooth; /* Memberikan efek scroll yang halus saat mengklik menu navigasi */
+}
+
+/*
+    GLOBAL & BODY STYLES Pengaturan dasar untuk seluruh halaman website*/
+body {
+    font-family: Arial, sans-serif;
+    color: #333333;           
+    background-color: #F5F9FE; 
+    line-height: 1.6;          /* Jarak antar baris teks*/
+}
+
+/*  CONTAINER (header) Membatasi lebar konten agar berada di tengah layar */
+.container {
+    width: 90%;
+    max-width: 1200px; /* Lebar maksimal konten di layar besar */
+    margin: 0 auto;    /* Memposisikan kontainer di tengah secara otomatis */
+}
+
+/*  STYLES TOMBOL (BUTTONS) & JUDUL SECTION */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #0d4970; 
+    color: #FFFFFF;            
+    text-decoration: none;     /* Menghilangkan garis bawah link */
+    border-radius: 6px;        /* Melengkungkan sudut tombol */
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #2980b9; /* Warna biru sedikit lebih gelap saat kursor diarahkan */
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #9c5656;
+    letter-spacing: 1px;
+}
+
+/* 
+   5. NAVBAR  menggunakan Flexbox  */
+.navbar {
+    background-color: #1be758;
+    height: 75px;
+    position: sticky; /* Membikin navbar tetap menempel di atas saat discroll */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Bayangan halus di bawah navbar */
+}
+
+.nav-container {
+    display: flex; /* FLEXBOX: Mengatur posisi logo dan menu sejajar horizontal */
+    justify-content: space-between; /* Logo di paling kiri, Menu di paling kanan */
+    align-items: center; /* Menyejajarkan logo dan menu di tengah secara vertikal */
+    height: 100%;
+}
+
+.logo {
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.nav-menu {
+    display: flex; /* FLEXBOX: Menyusun item menu bersebelahan */
+    gap: 25px;     /* Jarak antar menu navigasi */
+}
+
+.nav-link {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    text-decoration: underline; /* Garis bawah saat kursor diarahkan ke menu */
+}
+
+/*  HERO SECTION (#home)
+   Bagian profil utama di atas dengan latar belakang biru muda */
+.hero {
+    background-color: #acb937;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column; /* FLEXBOX: Menyusun foto, nama, dan tombol ke bawah */
+    align-items: center;    /* Memposisikan semua konten di tengah secara horizontal */
+    justify-content: center;
+}
+
+.hero-image-wrapper {
+    margin-bottom: 25px;
+}
+
+.profile-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%; /* Membuat foto berbentuk lingkaran */
+    object-fit: cover;  /* Memastikan foto tidak gepeng atau terdistorsi */
+    border: 4px solid #FFFFFF; /* Pinggiran foto berwarna putih */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Bayangan foto */
+}
+
+.hero-title {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #333333;
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    color: #333333;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.hero-description {
+    max-width: 650px;
+    font-size: 16px;
+    color: #ede7e7;
+    margin-bottom: 30px;
+}
+
+/* 
+ABOUT SECTION (#about)*/
+.about {
+    background-color: #FFFFFF; /* Warna latar putih */
+    padding: 80px 0;
+}
+
+.about-grid {
+    display: grid; /* GRID: Membagi layout menjadi beberapa kolom */
+    grid-template-columns: 1fr 1fr; /* Membagi menjadi 2 kolom sama lebar */
+    gap: 40px; /* Jarak antar kolom kiri dan kanan */
+}
+
+.about-description h3,
+.info-box h3 {
+    font-size: 22px;
+    color: #3498DB;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #D6E9FA;
+    padding-bottom: 8px;
+}
+
+.about-description p {
+    margin-bottom: 15px;
+    color: #333333;
+    text-align: justify;
+}
+
+.info-box {
+    margin-bottom: 25px;
+}
+
+.education-item h4 {
+    font-size: 18px;
+    color: #333333;
+}
+
+.education-item p {
+    color: #666666;
+}
+
+.education-item .year {
+    display: inline-block;
+    font-size: 14px;
+    color: #3498DB;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* List skill yang berbentuk kotak kecil (badge) */
+.skills-list {
+    list-style: none; /* Menghilangkan simbol bullet bawaan HTML */
+    display: flex;
+    flex-wrap: wrap; /* Pindah ke baris baru jika ruang tidak cukup */
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.skills-list li {
+    background-color: #D6E9FA; /* Warna latar belakang skill biru muda */
+    color: #333333;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/*
+   PROJECTS SECTION (#projects)
+ */
+.projects {
+    background-color: #d8d6fa; 
+    padding: 80px 0;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 kolom sejajar di layar komputer */
+    gap: 30px; /* Jarak antar kartu proyek */
+}
+
+.project-card {
+    background-color: #FFFFFF; /* Warna latar kartu putih */
+    border-radius: 12px;       /* Sudut melengkung */
+    overflow: hidden;          /* Agar foto tidak keluar dari sudut melengkung */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Bayangan tipis kartu */
+    display: flex;
+    flex-direction: column;    /* Menyusun gambar dan teks secara vertikal */
+}
+
+.card-image-wrapper {
     width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
 
- }
- .container-nav {
-        background-color: #3d9e9e;
-        width: 100%;
-        align-items: center;
-        margin-top: -20px;
-        margin-bottom: 20px;
-        display: flex;
-      }
-      .logo{
-        font-size: 25px;
-        padding: 12px;
-        
-       
-      }
-       .container-item{
-        width: 100%;
-        margin: 0% auto;
-        /* padding-right: 10%; */
-        padding-left: 77%;
-        flex-direction: row;
-        align-items: center;
-        display: flex;
-        position: fixed;
-        font-size: 20px;
-        margin: 0 auto;
-        
-      } 
-       a {
-        text-decoration: none;
-        margin-left: 25px;
-        color: rgb(233, 229, 229);
-        align-items: right;
-        /* color: rgb(0, 0, 0); */
-        /* text-align: right; */
-      }
-
-      a:hover{
-        color: black;
-      }
-      
-
-      /* .nav-group {
-        padding: 10px;
-        margin: 0 auto;
-        box-shadow: 0 4px 10px rgb(0, 0, 0, 1);
-        border-radius: 2px solid;
-        display: flex;
-        padding: 20px;
-        margin: 0 auto;
-        padding-left: 10px;
-        position: fixed;
-
-       
-      } */
-
-      .container-home {
+.project-image {
     width: 100%;
-   
-    padding: 20px;
-    box-sizing: border-box;
-    border: 2px solid #777;
+    height: 100%;
+    object-fit: cover; /* Foto proyek rapi dan tidak gepeng */
+}
+
+.card-content {
+    padding: 25px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    background-image: url(https://images.unsplash.com/photo-1531685250784-7569952593d2?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
-    background-size: cover;
-    margin-top: -25px;
+    flex-grow: 1;
 }
 
-.home-gambar {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 100px;
-   
+.project-title {
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: #333333;
 }
 
-.home-gambar img {
-   
-    max-width: 100%;
-    background-color: white;
-    width: 300px;
-    border-radius: 360px;    
+.project-description {
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Mendorong tombol ke bagian paling bawah kartu */
 }
-.home-detail1{
-    
-    width: 25%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 25px;
-    color: springgreen;
-    margin-top: 10px;
-    background-color: rgb(58, 75, 90);
-    border-radius: 25px;
+
+.btn-card {
+    text-align: center;
+    font-size: 14px;
+    padding: 10px 20px;
+    align-self: flex-start;
 }
-.home-detail2{
-    
-    width: 25%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+/*
+   9. CONTACT SECTION (#contact) */
+.contact {
+    background-color: #FFFFFF;
+    padding: 80px 0;
+}
+
+.contact-form {
+    max-width: 600px; /* Lebar maksimal formulir kontak */
+    margin: 0 auto;   /* Memposisikan formulir tepat di tengah */
+    background-color: #F5F9FE;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e1e8ed;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333333;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%; /* Input memenuhi lebar formulir */
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: inherit;
     font-size: 15px;
-    margin-top: 10px;
-    background-color: rgb(58, 75, 90);
-    border-radius: 25px;
-    color: springgreen;
+    background-color: #FFFFFF;
 }
 
+/* Tampilan saat kotak input diklik (Focus State) */
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #3498DB; /* Warna border berubah menjadi biru */
+    outline: none;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.3); /* Bayangan biru di sekeliling input */
+}
+
+.form-group textarea {
+    resize: vertical; /* Pengguna bisa merubah tinggi kolom pesan secara vertikal */
+}
+
+.btn-submit {
+    width: 100%; /* Tombol kirim memenuhi lebar penuh formulir */
+    font-size: 16px;
+    padding: 14px;
+    margin-top: 10px;
+}
+
+/* 
+ FOOTER */
+.footer {
+    background-color: #3498DB; 
+    color: #FFFFFF;            
+    text-align: center;
+    padding: 25px 0;
+    font-size: 14px;
+}
+
+/*  RESPONSIVE DESIGN (MEDIA QUERIES)
+   Mengubah tata letak otomatis sesuai ukuran layar perangkat
+*/
+
+/* --- TABLET (768px sampai 1023px) --- */
+@media (max-width: 1023px) {
+    .hero {
+        padding: 60px 0;
+    }
+
+    .hero-title {
+        font-size: 30px;
+    }
+
+    .about-grid {
+        gap: 25px;
+    }
+
+    /* Kartu proyek berubah menjadi 2 kolom per baris di tablet */
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* --- MOBILE / SMARTPHONE (Maksimal 767px) --- */
+@media (max-width: 767px) {
+    /* Penyesuaian Navbar pada Layar HP */
+    .navbar {
+        height: auto;
+        padding: 15px 0;
+    }
+
+    .nav-container {
+        flex-direction: column; /* Logo dan Menu disusun vertikal ke bawah */
+        gap: 12px;
+    }
+
+    .nav-menu {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-link {
+        font-size: 14px;
+    }
+
+    /* Penyesuaian Hero Section pada HP */
+    .hero {
+        padding: 50px 0;
+    }
+
+    .profile-image {
+        width: 140px;
+        height: 140px;
+    }
+
+    .hero-title {
+        font-size: 26px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    /* Section About berubah dari 2 kolom menjadi 1 kolom di HP */
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Section Projects berubah menjadi 1 kolom di HP (1 kartu per baris) */
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Penyesuaian jarak (padding) di layar HP */
+    .about, .projects, .contact {
+        padding: 50px 0;
+    }
+
+    .section-title {
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+
+    /* Penyesuaian padding formulir di HP */
+    .contact-form {
+        padding: 20px;
+    }
+}

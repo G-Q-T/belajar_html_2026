@@ -1,51 +1,230 @@
 <!doctype html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fortofolio</title>
+    <title>Portofolio - Gibran Qolil Tabrani</title>
+    <!-- Menghubungkan file HTML dengan file styling CSS eksternal -->
     <link rel="stylesheet" href="portofolio.css" />
   </head>
   <body>
-    <!-- bagian navbar -->
-    <div class="container-nav">
-       
-      <h2 class="logo">Qolil</h2>
-      <div class="container-item">
-            <a href="#home">home</a>
-            <a href="#ability">Ability</a>
-            <a href="#about">about</a>
-            <a href="#contact">contact</a>
+    <!-- HEADER / NAVBAR -->
+    <header class="navbar">
+      <div class="container nav-container">
+        <!-- Logo / Nama -->
+        <a href="#home" class="logo">GIBRAN QOLIL TABRANI</a>
+
+        <!-- Navigasi Menu Link Anchor -->
+        <nav class="nav-menu">
+          <a href="#home" class="nav-link">Home</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Content Utama Website -->
+    <main>
+      <!--  HERO / PROFILE SECTION (#home) Bagian perkenalan utama dan foto profil -->
+      <section class="hero" id="home">
+        <div class="container hero-container">
+          <!-- Foto Profil berbentuk Lingkaran -->
+          <div class="hero-image-wrapper">
+            <!-- Asset gambar profil diambil dari folder img/ -->
+            <img
+              src="../img/Gibran.png"
+              alt="Foto Profil Gibran Qolil"
+              class="profile-image"
+            />
+          </div>
+
+          <!-- Teks Perkenalan Diri -->
+          <div class="hero-content">
+            <h1 class="hero-title">Hello, I'm Gibran Qolil</h1>
+            <h2 class="hero-subtitle">
+              Web Developer &amp; Information Technology Student
+            </h2>
+            <p class="hero-description">
+              Saya memiliki ketertarikan pada pengembangan website
+            </p>
+            <!-- Tombol Aksi Menuju Section Projects -->
+            <a href="#projects" class="btn btn-primary">View My Projects</a>
+          </div>
+        </div>
+      </section>
+
+      <!--  ABOUT SECTION (#about)  Berisi Informasi diri, pendidikan, dan skill-->
+      <section class="about" id="about">
+        <div class="container">
+          <!-- Judul Section -->
+          <h2 class="section-title">ABOUT ME</h2>
+
+          <!-- Grid 2 Kolom untuk Deskripsi (Kiri) & Informasi/Skill (Kanan) -->
+          <div class="about-grid">
+            <!-- Kolom Kiri: Deskripsi Diri -->
+            <div class="about-description">
+              <h3>Biografi</h3>
+              <p>
+                Halo, saya <strong>Gibran Qolil Tabrani</strong>, mahasiswa
+                Teknologi Informasi Universitas Darma Persada yang memiliki
+                minat pada pengembangan website dan teknologi kecerdasan buatan.
+              </p>
+              <p>
+                Saya memiliki ketertarikan tinggi untuk terus belajar dan
+                menciptakan solusi teknologi yang bermanfaat melalui baris kode
+                yang bersih dan terstruktur.
+              </p>
             </div>
-      </div>
-      </div>
 
-      <!-- bagian section1 home -->
-      <div class="container-home" id="home">
-        <div class="home-gambar">
-          <img src="./../img/kucing1.jpeg" alt="" />
+            <!-- Kolom Kanan: Education & Skills -->
+            <div class="about-info">
+              <!-- Bagian Pendidikan -->
+              <div class="info-box">
+                <h3>Education</h3>
+                <div class="education-item">
+                  <h4>Universitas Darma Persada</h4>
+                  <p>S1 Teknologi Informasi</p>
+                  <span class="year">2022 - Sekarang</span>
+                </div>
+              </div>
+
+              <!-- Bagian Skills -->
+              <div class="info-box">
+                <h3>Skills</h3>
+                <ul class="skills-list">
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>PHP</li>
+                  <li>Laravel</li>
+                  <li>Python</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="home-detail1">
-          <p>Halo perkenalkan nama saya ismail bin mail</p>
+      </section>
+
+      <!-- PROJECTS SECTION (#projects) Menampilkan kartu portofolio proyek yang pernah dibuat -->
+      <section class="projects" id="projects">
+        <div class="container">
+          <!-- Judul Section -->
+          <h2 class="section-title">MY PROJECTS</h2>
+
+          <!-- Grid 3 Kolom untuk Menampung Kartu Proyek -->
+          <div class="project-grid">
+            <!-- Card Project 1 -->
+            <article class="project-card">
+              <div class="card-image-wrapper">
+                <img
+                  src="../img/anak ayam.jpg"
+                  alt="AI Chicken Health Detection"
+                  class="project-image"
+                />
+              </div>
+              <div class="card-content">
+                <h3 class="project-title">AI Chicken Health Detection</h3>
+                <p class="project-description">
+                  Website untuk mendeteksi kondisi anak ayam menggunakan
+                  computer vision dan model YOLO.
+                </p>
+                <a href="#projects" class="btn btn-card">View Project</a>
+              </div>
+            </article>
+
+            <!-- Card Project 2 -->
+            <article class="project-card">
+              <div class="card-image-wrapper">
+                <img
+                  src="../img/surat menyurat.jpg"
+                  alt="Surat Pengesahan"
+                  class="project-image"
+                />
+              </div>
+              <div class="card-content">
+                <h3 class="project-title">Surat Pengesahan</h3>
+                <p class="project-description">
+                  Sistem berbasis web untuk proses pengelolaan dan pengesahan
+                  surat secara digital.
+                </p>
+                <a href="#projects" class="btn btn-card">View Project</a>
+              </div>
+            </article>
+
+            <!-- Card Project 3 -->
+            <article class="project-card">
+              <div class="card-image-wrapper">
+                <img
+                  src="../img/doodle.jpg"
+                  alt="Personal Portfolio"
+                  class="project-image"
+                />
+              </div>
+              <div class="card-content">
+                <h3 class="project-title">Personal Portfolio</h3>
+                <p class="project-description">
+                  Website portfolio pribadi untuk menampilkan profil, skill, dan
+                  project yang pernah dibuat.
+                </p>
+                <a href="#projects" class="btn btn-card">View Project</a>
+              </div>
+            </article>
+          </div>
         </div>
-        <div class="home-detail2">
-          <p>saya hanyalah seekor kucing yang senang berfoto</p>
+      </section>
+
+      <!-- CONTACT SECTION (#contact) Formulir kontak untuk mengirimkan pesan -->
+      <section class="contact" id="contact">
+        <div class="container">
+          <!-- Judul Section -->
+          <h2 class="section-title">CONTACT ME</h2>
+
+          <!-- Formulir Kontak-->
+          <form action="#" method="post" class="contact-form">
+            <div class="form-group">
+              <label for="name">Nama</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Masukkan nama Anda"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Masukkan email Anda"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="message">Pesan</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="Tuliskan pesan Anda..."
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-submit">Send Message</button>
+          </form>
         </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2026 Gibran Qolil Tabrani. All Rights Reserved.</p>
       </div>
-
-      <!-- bagian section2 content -->
-      <div class="container-content" id="ability">
-        
-      </div>
-
-      <!-- bagian section3 about -->
-      <div class="container-about" id="about"></div>
-
-      <!-- bagian section4 contact -->
-      <div class="container-contact" id="contact"></div>
-
-      <!-- bagian footer -->
-      <div class="container-footer"></div>
-    </div>
+    </footer>
   </body>
 </html>
