@@ -1,0 +1,118 @@
+ body{
+    margin:0;
+    background-color: rgb(231, 205, 205);
+    width: 100%;
+
+ }
+ .container-nav {
+        background-color: #3d9e9e;
+        width: 100%;
+        align-items: center;
+        margin-top: -20px;
+        margin-bottom: 20px;
+        display: flex;
+      }
+      .logo{
+        font-size: 25px;
+        padding: 12px;
+        
+       
+      }
+       .container-item{
+        width: 100%;
+        margin: 0% auto;
+        /* padding-right: 10%; */
+        padding-left: 77%;
+        flex-direction: row;
+        align-items: center;
+        display: flex;
+        position: fixed;
+        font-size: 20px;
+        margin: 0 auto;
+        
+      } 
+       a {
+        text-decoration: none;
+        margin-left: 25px;
+        color: rgb(233, 229, 229);
+        align-items: right;
+        /* color: rgb(0, 0, 0); */
+        /* text-align: right; */
+      }
+
+      a:hover{
+        color: black;
+      }
+      
+
+      /* .nav-group {
+        padding: 10px;
+        margin: 0 auto;
+        box-shadow: 0 4px 10px rgb(0, 0, 0, 1);
+        border-radius: 2px solid;
+        display: flex;
+        padding: 20px;
+        margin: 0 auto;
+        padding-left: 10px;
+        position: fixed;
+
+       
+      } */
+
+      .container-home {
+    width: 100%;
+   
+    padding: 20px;
+    box-sizing: border-box;
+    border: 2px solid #777;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(https://images.unsplash.com/photo-1531685250784-7569952593d2?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-size: cover;
+    margin-top: -25px;
+}
+
+.home-gambar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+   
+}
+
+.home-gambar img {
+   
+    max-width: 100%;
+    background-color: white;
+    width: 300px;
+    border-radius: 360px;    
+}
+.home-detail1{
+    
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 25px;
+    color: springgreen;
+    margin-top: 10px;
+    background-color: rgb(58, 75, 90);
+    border-radius: 25px;
+}
+.home-detail2{
+    
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+    margin-top: 10px;
+    background-color: rgb(58, 75, 90);
+    border-radius: 25px;
+    color: springgreen;
+}
+
